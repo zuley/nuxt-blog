@@ -1,28 +1,13 @@
+<!--
+ * @Author: zuley
+ * @Date: 2021-01-12 10:05:29
+ * @LastEditors: zuley
+ * @LastEditTime: 2021-01-15 13:55:30
+-->
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">
-        test
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      233
     </div>
   </div>
 </template>
@@ -30,7 +15,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  mounted () {
+    this.$api.menu.getHead()
+    this.$api.menu.getFooterBlogroll()
+  }
+})
 </script>
 
 <style>

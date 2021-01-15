@@ -1,3 +1,9 @@
+/*
+ * @Author: zuley
+ * @Date: 2021-01-12 10:05:29
+ * @LastEditors: zuley
+ * @LastEditTime: 2021-01-15 10:45:50
+ */
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -19,7 +25,10 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/antd-ui'
+    '@/plugins/antd-ui',
+    '~/plugins/axios',
+    '~/plugins/config',
+    '~/plugins/service',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

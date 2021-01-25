@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:02:05
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-15 11:29:59
+ * @LastEditTime: 2021-01-25 18:53:15
  */
 
 import { AppConfig } from "~/types/config";
@@ -30,6 +30,18 @@ export default {
         new_tap_open: 'new_tap_open',
         nofollow: 'nofollow',
         type_code: 'type_code'
+      }
+    },
+    /** 页面模型 */
+    page: {
+      db_name: 'blog_page',
+      fieldKEY: {
+        title: 'title',
+        content: 'content',
+        pic: 'pic',
+        url: 'url',
+        style: 'style',
+        parent: 'parent'
       }
     }
   },

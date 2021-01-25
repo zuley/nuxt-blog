@@ -2,27 +2,28 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:44:24
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-15 13:55:21
+ * @LastEditTime: 2021-01-25 19:36:25
  */
 
-interface MenuData {
-  name: string
-  url: string
-  new_tap_open: boolean
-  nofollow: boolean
-  type_code: string
+import {
+  MenuData,
+  OptionData,
+  PageData
+} from './config'
+
+interface Global {
+  /** 菜单 */
+  getMenu(code: string): Promise<MenuData[]>
+  /** 获取设置 */
+  getOption(code: string): Promise<OptionData>
 }
 
-export interface Menu {
-  /** 获取头部菜单 */
-  getHead(): Promise<MenuData[]>
-  /** 获取底部友情链接 */
-  getFooterBlogroll(): Promise<MenuData[]>
+interface Page {
+  getTopList(page?: number, size?: number): Promise<PageData[]>
 }
-
-
 
 export interface Service {
-  menu: Menu
+  global: Global
+  page: Page
   [prop: string]: any
 }

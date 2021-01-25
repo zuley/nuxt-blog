@@ -2,8 +2,10 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:03:42
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-15 11:07:56
+ * @LastEditTime: 2021-01-25 19:21:35
  */
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+type Merge<M, N> = Omit<M, Extract<keyof M, keyof N>> & N
 
 export interface AppConfig {
   /** API基础访问路径 */
@@ -15,31 +17,46 @@ export interface AppConfig {
   dict: Dict;
 }
 
+/** 菜单模型 */
+interface MenuData {
+  name: string
+  url: string
+  new_tap_open: boolean
+  nofollow: boolean
+  type_code: string
+}
+
+/** 设置模型 */
+interface OptionData {
+  code: string
+  name: string
+  value: string
+}
+/** 页面模型 */
+interface PageData {
+  title: string
+  content: string
+  pic: string
+  url: string
+  style: string
+  parent: string
+}
+
+interface Schema<T> {
+  db_name: string
+  fieldKEY: T
+}
+
 export interface AppSchema {
   /** 设置 */
-  option: {
-    /** 数据库名 */
-    db_name: string;
-    /** 字段KEY名 */
-    fieldKEY: {
-      code: string
-      name: string
-      value: string
-    }
-  }
-  /** 设置 */
-  menu: {
-    /** 数据库名 */
-    db_name: string;
-    /** 字段KEY名 */
-    fieldKEY: {
-      name: string
-      url: string
-      new_tap_open: string
-      nofollow: string
-      type_code: string
-    }
-  }
+  option: Schema<OptionData>
+  /** 菜单 */
+  menu: Schema<Merge<MenuData,{
+    new_tap_open: string
+    nofollow: string
+  }>>
+  /** 页面 */
+  page: Schema<PageData>
 }
 
 export interface Dict {

@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-15 10:45:50
+ * @LastEditTime: 2021-01-26 16:11:22
  */
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)

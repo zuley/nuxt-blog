@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-25 19:33:33
+ * @LastEditTime: 2021-01-26 18:38:53
 -->
 <template>
   <div class="container">
@@ -21,7 +21,7 @@ export default Vue.extend({
     // this.$api.global.getMenu(this.$appConfig.dict.menu.footer_blogroll)
     // this.$api.global.getOption(this.$appConfig.dict.option.siteTitle)
     // this.$api.global.getOption(this.$appConfig.dict.option.siteKeyword)
-    this.$api.page.getTopList()
+    this.$api.page.getChildList('28ee4e3e600e9fef00f71ec90dd08d0d')
   }
 })
 </script>

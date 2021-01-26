@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:44:24
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-25 19:36:25
+ * @LastEditTime: 2021-01-26 18:34:02
  */
 
 import {
@@ -19,7 +19,10 @@ interface Global {
 }
 
 interface Page {
+  /** 获取顶级页面列表 */
   getTopList(page?: number, size?: number): Promise<PageData[]>
+  /** 获取子级页面列表 */
+  getChildList(parent: string, page?: number, size?: number): Promise<PageData[]>
 }
 
 export interface Service {

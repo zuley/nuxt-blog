@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-25 19:22:44
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-26 18:33:36
+ * @LastEditTime: 2021-01-26 19:45:37
  */
 
 import AppConfig from '~/config/appConfig'
@@ -18,12 +18,10 @@ export default {
       limit: size,
       skip: (page - 1) * size,
       query: {
-        parent: {
-          $exists: false
-        }
+        parent: null
       }
     }
-    return axiosPost(findPath, params, false).then((res: any) => res.data) as Promise<PageData[]>
+    return axiosPost(findPath, params, false, false).then((res: any) => res.data) as Promise<PageData[]>
   },
   // 获取子级页面列表
   getChildList (parent: string, page: number = 1, size: number = 10) {

@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-26 19:31:34
+ * @LastEditTime: 2021-01-27 13:46:45
 -->
 <template>
   <div class="container">
@@ -22,6 +22,7 @@ export default Vue.extend({
     // this.$api.global.getOption(this.$appConfig.dict.option.siteTitle)
     // this.$api.global.getOption(this.$appConfig.dict.option.siteKeyword)
     // this.$api.page.getChildList('28ee4e3e600e9fef00f71ec90dd08d0d')
+    this.$api.classify.getTopList()
     this.$api.page.getTopList()
   }
 })

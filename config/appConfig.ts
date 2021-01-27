@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:02:05
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-25 18:53:15
+ * @LastEditTime: 2021-01-27 10:40:11
  */
 
 import { AppConfig } from "~/types/config";
@@ -41,6 +41,16 @@ export default {
         pic: 'pic',
         url: 'url',
         style: 'style',
+        parent: 'parent'
+      }
+    },
+    /** 文章分类 */
+    classify: {
+      db_name: 'blog_article_classify',
+      fieldKEY: {
+        name: 'name',
+        slug: 'slug',
+        pic: 'pic',
         parent: 'parent'
       }
     }

@@ -2,13 +2,14 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:44:24
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-26 18:34:02
+ * @LastEditTime: 2021-01-27 13:44:23
  */
 
 import {
   MenuData,
   OptionData,
-  PageData
+  PageData,
+  ClassifyData
 } from './config'
 
 interface Global {
@@ -25,8 +26,16 @@ interface Page {
   getChildList(parent: string, page?: number, size?: number): Promise<PageData[]>
 }
 
+interface Classify {
+  /** 获取顶级分类列表 */
+  getTopList(page?: number, size?: number): Promise<ClassifyData[]>
+  /** 获取子级分类列表 */
+  getChildList(parent: string, page?: number, size?: number): Promise<ClassifyData[]>
+}
+
 export interface Service {
   global: Global
   page: Page
+  classify: Classify
   [prop: string]: any
 }

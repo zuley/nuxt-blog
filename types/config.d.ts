@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:03:42
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-25 19:21:35
+ * @LastEditTime: 2021-01-27 10:39:44
  */
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 type Merge<M, N> = Omit<M, Extract<keyof M, keyof N>> & N
@@ -42,6 +42,14 @@ interface PageData {
   parent: string
 }
 
+/** 分类模型 */
+interface ClassifyData {
+  name: string
+  slug: string
+  pic: string
+  parent: ClassifyData
+}
+
 interface Schema<T> {
   db_name: string
   fieldKEY: T
@@ -51,12 +59,16 @@ export interface AppSchema {
   /** 设置 */
   option: Schema<OptionData>
   /** 菜单 */
-  menu: Schema<Merge<MenuData,{
+  menu: Schema<Merge<MenuData, {
     new_tap_open: string
     nofollow: string
   }>>
   /** 页面 */
   page: Schema<PageData>
+  /** 分类 */
+  classify: Schema<Merge<ClassifyData, {
+    parent: string
+  }>>
 }
 
 export interface Dict {

@@ -2,23 +2,24 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:46:38
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-25 18:48:21
+ * @LastEditTime: 2021-02-02 15:11:36
  */
-
 import AppConfig from '~/config/appConfig'
 import { MenuData, OptionData } from '~/types/config'
 import { axiosPost } from '~/utils/axios'
+import { treeFormat } from '~/utils/util'
 
 export default {
   // 获取菜单
-  getMenu (code: string) {
+  async getMenu (code: string) {
     const findPath = AppConfig.schema.menu.db_name + '/find'
     const params = {
       query: {
         type_code: { "$eq": code }
       }
     }
-    return axiosPost(findPath, params, false).then(res => (res as any).data) as Promise<MenuData[]>
+    const resData = await axiosPost(findPath, params, false).then(res => (res as any).data) as Promise<MenuData[]>
+    return treeFormat(resData)
   },
   // 获取设置
   getOption (code: string) {

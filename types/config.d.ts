@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:03:42
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-27 10:39:44
+ * @LastEditTime: 2021-02-01 14:18:05
  */
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 type Merge<M, N> = Omit<M, Extract<keyof M, keyof N>> & N
@@ -24,6 +24,7 @@ interface MenuData {
   new_tap_open: boolean
   nofollow: boolean
   type_code: string
+  parent: MenuData | any
 }
 
 /** 设置模型 */
@@ -62,6 +63,7 @@ export interface AppSchema {
   menu: Schema<Merge<MenuData, {
     new_tap_open: string
     nofollow: string
+    parent: string
   }>>
   /** 页面 */
   page: Schema<PageData>

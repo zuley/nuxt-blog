@@ -2,14 +2,15 @@
  * @Author: zuley
  * @Date: 2021-01-27 10:36:16
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-01 14:11:25
+ * @LastEditTime: 2021-02-04 17:27:38
  */
 
 import AppConfig from '~/config/appConfig'
-import { ClassifyData } from '~/types/config'
-import { axiosPost } from '~/utils/axios'
+import { ResData, ClassifyData } from '~/types/config'
+import { axiosGet, axiosPost } from '~/utils/axios'
 
 const findPath = AppConfig.schema.classify.db_name + '/find'
+const docPath = AppConfig.schema.classify.db_name + '/'
 
 export default {
   // 获取分类
@@ -33,5 +34,13 @@ export default {
       }
     }
     return axiosPost(findPath, params, false).then((res: any) => res.data) as Promise<ClassifyData[]>
+  },
+  // 根据 slug 获取内容
+  getDataBySlug (slug: string) {
+    return axiosPost(findPath, {
+      query: {
+        slug
+      }
+    }, false, false ) as Promise<ResData<ClassifyData[]>>
   }
 }

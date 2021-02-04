@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:02:05
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-27 10:40:11
+ * @LastEditTime: 2021-02-04 11:54:09
  */
 
 import { AppConfig } from "~/types/config";
@@ -29,7 +29,8 @@ export default {
         url: 'url',
         new_tap_open: 'new_tap_open',
         nofollow: 'nofollow',
-        type_code: 'type_code'
+        type_code: 'type_code',
+        parent: 'parent'
       }
     },
     /** 页面模型 */
@@ -52,6 +53,21 @@ export default {
         slug: 'slug',
         pic: 'pic',
         parent: 'parent'
+      }
+    },
+    /** 文章 */
+    article: {
+      db_name: 'blog_article',
+      fieldKEY: {
+        title: 'title',
+        summary: 'summary',
+        content: 'content',
+        views: 'views',
+        cat: 'cat',
+        pic: 'pic',
+        meta: 'meta',
+        tags: 'tags',
+        newTabStatus: 'new-tab-status'
       }
     }
   },

@@ -2,14 +2,16 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:44:24
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-27 13:44:23
+ * @LastEditTime: 2021-02-04 17:27:51
  */
 
 import {
   MenuData,
   OptionData,
   PageData,
-  ClassifyData
+  ClassifyData,
+  ArticleData,
+  ResData
 } from './config'
 
 interface Global {
@@ -31,11 +33,22 @@ interface Classify {
   getTopList(page?: number, size?: number): Promise<ClassifyData[]>
   /** 获取子级分类列表 */
   getChildList(parent: string, page?: number, size?: number): Promise<ClassifyData[]>
+  /** 根据 slug 获取内容 */
+  getDataBySlug(slug: string): Promise<ResData<ClassifyData[]>>
+}
+
+interface Article {
+  /**
+   * 获取文章列表
+   * 根据 type 分类类型获取文章列表【id】[slug]
+  */
+  getList(classify?: string, type?: string, page?: number, size?: number): Promise<ArticleData[]>
 }
 
 export interface Service {
   global: Global
   page: Page
   classify: Classify
+  article: Article
   [prop: string]: any
 }

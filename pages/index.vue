@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-01 14:19:41
+ * @LastEditTime: 2021-02-04 17:29:45
 -->
 <template>
   <div class="container">
@@ -17,8 +17,8 @@ import Vue from 'vue'
 
 export default Vue.extend({
   mounted () {
-    this.$api.global.getMenu(this.$appConfig.dict.menu.head).then(res => {
-      console.log('菜单数据', res)
+    this.$api.article.getList('test', 'slug').then(res => {
+      console.log('文章数据', res)
     })
     // this.$api.global.getMenu(this.$appConfig.dict.menu.footer_blogroll)
     // this.$api.global.getOption(this.$appConfig.dict.option.siteTitle)

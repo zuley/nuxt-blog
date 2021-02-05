@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-01-26 16:11:22
+ * @LastEditTime: 2021-02-05 17:33:57
  */
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -20,7 +20,8 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'ant-design-vue/dist/antd.css'
+    'ant-design-vue/dist/antd.css',
+    '~/assets/scss/global.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)

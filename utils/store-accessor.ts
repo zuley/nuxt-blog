@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-02-05 19:21:10
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-05 21:50:55
+ * @LastEditTime: 2021-02-06 11:55:07
  */
 
 import { Store } from 'vuex'
@@ -15,10 +15,11 @@ let globalStore: global
 // 初始化函数
 function initialiseStores(store: Store<any>): void {
   globalStore = getModule(global, store)
-  // 获取站点信息
   // 获取菜单
-  globalStore.getMenu('headMenu', appConfig.dict.menu.head)
-  globalStore.getMenu('footerMenu', appConfig.dict.menu.footer_blogroll)
+  globalStore.getMenu({ key: 'headMenu', code: appConfig.dict.menu.head })
+  globalStore.getMenu({ key: 'footerMenu', code: appConfig.dict.menu.footer_blogroll })
+  // 设置标题
+  globalStore.getAllOption()
 }
 
 export { initialiseStores, globalStore }

@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:44:24
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-04 17:27:51
+ * @LastEditTime: 2021-02-06 11:37:35
  */
 
 import {
@@ -18,7 +18,7 @@ interface Global {
   /** 菜单 */
   getMenu(code: string): Promise<MenuData[]>
   /** 获取设置 */
-  getOption(code: string): Promise<OptionData>
+  getOption(code?: string): Promise<OptionData[]>
 }
 
 interface Page {

@@ -2,20 +2,22 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-06 11:42:35
+ * @LastEditTime: 2021-02-06 12:07:27
 -->
 <template>
   <div class="container">
-    <div>
-      233
-    </div>
+    <Top />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Top from '@/components/Top.vue'
 
 export default Vue.extend({
+  components: {
+    Top
+  },
   mounted () {
     // this.$api.global.getMenu(this.$appConfig.dict.menu.footer_blogroll)
     // this.$api.global.getOption(this.$appConfig.dict.option.siteTitle)

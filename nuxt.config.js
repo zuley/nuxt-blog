@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 10:05:29
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-05 17:33:57
+ * @LastEditTime: 2021-02-07 16:04:46
  */
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -30,6 +30,7 @@ export default {
     '~/plugins/axios',
     '~/plugins/config',
     '~/plugins/service',
+    '~/plugins/filter',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

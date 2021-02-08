@@ -13,8 +13,10 @@
     "@nuxtjs/axios": "^5.12.2",
     "ant-design-vue": "^1.7.2",
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.4",
     "lodash": "^4.17.20",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "qs": "^6.9.6"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
@@ -22,6 +24,8 @@
     "@types/lodash": "^4.14.168",
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2",
     "vuex-module-decorators": "^1.0.1"
   }
 }

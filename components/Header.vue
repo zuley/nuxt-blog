@@ -2,11 +2,15 @@
  * @Author: zuley
  * @Date: 2021-02-07 14:23:01
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-07 16:10:44
+ * @LastEditTime: 2021-02-08 16:24:08
 -->
 <template>
   <div class="m-header">
-    <div class="g-wrap">
+    <div class="g-wrap" v-if="classify">
+      <h1 class="title">分类：{{ classify[$appConfig.schema.classify.fieldKEY.name] }}</h1>
+      <div class="desc">{{ classify[$appConfig.schema.classify.fieldKEY.description] }}</div>
+    </div>
+    <div v-else class="g-wrap">
       <h1 class="title">{{ title }}</h1>
       <div class="desc">{{ subhead }}</div>
     </div>
@@ -15,9 +19,12 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
+import { ClassifyData } from '~/types/config'
 
 @Component
 export default class Header extends Vue {
+
+  @Prop({ type: Object, required: false }) readonly classify!: ClassifyData | null
 
   get title (): string {
     return this.$store.state.global.title

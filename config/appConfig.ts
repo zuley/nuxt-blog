@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:02:05
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-04 11:54:09
+ * @LastEditTime: 2021-02-08 16:23:03
  */
 
 import { AppConfig } from "~/types/config";
@@ -50,6 +50,7 @@ export default {
       db_name: 'blog_article_classify',
       fieldKEY: {
         name: 'name',
+        description: 'description',
         slug: 'slug',
         pic: 'pic',
         parent: 'parent'

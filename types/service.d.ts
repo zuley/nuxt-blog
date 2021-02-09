@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-15 09:44:24
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-06 11:37:35
+ * @LastEditTime: 2021-02-08 16:12:20
  */
 
 import {
@@ -34,7 +34,7 @@ interface Classify {
   /** 获取子级分类列表 */
   getChildList(parent: string, page?: number, size?: number): Promise<ClassifyData[]>
   /** 根据 slug 获取内容 */
-  getDataBySlug(slug: string): Promise<ResData<ClassifyData[]>>
+  getDataBySlug(slug: string): Promise<ClassifyData[]>
 }
 
 interface Article {
@@ -43,6 +43,10 @@ interface Article {
    * 根据 type 分类类型获取文章列表【id】[slug]
   */
   getList(classify?: string, type?: string, page?: number, size?: number): Promise<ArticleData[]>
+  /**
+   * 根据ID获取文章详情
+  */
+  getDataById(id: string): Promise<ArticleData>
 }
 
 export interface Service {

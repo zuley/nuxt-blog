@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-27 10:36:16
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-04 17:27:38
+ * @LastEditTime: 2021-02-08 16:11:15
  */
 
 import AppConfig from '~/config/appConfig'
@@ -41,6 +41,6 @@ export default {
       query: {
         slug
       }
-    }, false, false ) as Promise<ResData<ClassifyData[]>>
+    }, false, false ).then((res: any) => res.data) as Promise<ClassifyData[]>
   }
 }

@@ -2,7 +2,7 @@
  * @Author: zuley
  * @Date: 2021-01-12 11:03:42
  * @LastEditors: zuley
- * @LastEditTime: 2021-02-04 17:27:22
+ * @LastEditTime: 2021-02-08 16:23:21
  */
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 type Merge<M, N> = Omit<M, Extract<keyof M, keyof N>> & N
@@ -46,6 +46,7 @@ interface PageData {
 /** 分类模型 */
 interface ClassifyData {
   name: string
+  description: string
   slug: string
   pic: string
   parent: ClassifyData
